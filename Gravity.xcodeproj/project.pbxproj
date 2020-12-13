@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D12CBCD02586BA0D00AB2B1B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D12CBCCF2586BA0D00AB2B1B /* ComposableArchitecture */; };
+		D12CBCD42586BADA00AB2B1B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CBCD32586BADA00AB2B1B /* State.swift */; };
+		D12CBCD52586BADA00AB2B1B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CBCD32586BADA00AB2B1B /* State.swift */; };
 		D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
 		D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
 		D1FF98A5257D7119004ECE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FF9890257D7119004ECE90 /* Assets.xcassets */; };
 		D1FF98A6257D7119004ECE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FF9890257D7119004ECE90 /* Assets.xcassets */; };
+		D1FF98B3257D725D004ECE90 /* WasmTransformer in Frameworks */ = {isa = PBXBuildFile; productRef = D1FF98B2257D725D004ECE90 /* WasmTransformer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D12CBCD32586BADA00AB2B1B /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		D1FF988E257D7116004ECE90 /* GravityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityApp.swift; sourceTree = "<group>"; };
 		D1FF988F257D7116004ECE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1FF9890257D7119004ECE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12CBCD02586BA0D00AB2B1B /* ComposableArchitecture in Frameworks */,
+				D1FF98B3257D725D004ECE90 /* WasmTransformer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,13 +59,16 @@
 				D1FF989E257D7119004ECE90 /* macOS */,
 				D1FF9896257D7119004ECE90 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		D1FF988D257D7116004ECE90 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D1FF988E257D7116004ECE90 /* GravityApp.swift */,
 				D1FF988F257D7116004ECE90 /* ContentView.swift */,
+				D1FF988E257D7116004ECE90 /* GravityApp.swift */,
+				D12CBCD32586BADA00AB2B1B /* State.swift */,
 				D1FF9890257D7119004ECE90 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -123,6 +133,10 @@
 			dependencies = (
 			);
 			name = "Gravity (macOS)";
+			packageProductDependencies = (
+				D1FF98B2257D725D004ECE90 /* WasmTransformer */,
+				D12CBCCF2586BA0D00AB2B1B /* ComposableArchitecture */,
+			);
 			productName = "Gravity (macOS)";
 			productReference = D1FF989D257D7119004ECE90 /* Gravity.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +167,10 @@
 				Base,
 			);
 			mainGroup = D1FF9888257D7116004ECE90;
+			packageReferences = (
+				D1FF98B1257D725D004ECE90 /* XCRemoteSwiftPackageReference "WasmTransformer" */,
+				D12CBCCE2586BA0D00AB2B1B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = D1FF9896257D7119004ECE90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -189,6 +207,7 @@
 			files = (
 				D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */,
 				D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */,
+				D12CBCD42586BADA00AB2B1B /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +217,7 @@
 			files = (
 				D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */,
 				D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */,
+				D12CBCD52586BADA00AB2B1B /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +459,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D12CBCCE2586BA0D00AB2B1B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		D1FF98B1257D725D004ECE90 /* XCRemoteSwiftPackageReference "WasmTransformer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftwasm/WasmTransformer.git";
+			requirement = {
+				branch = "size-profiler";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D12CBCCF2586BA0D00AB2B1B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D12CBCCE2586BA0D00AB2B1B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		D1FF98B2257D725D004ECE90 /* WasmTransformer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1FF98B1257D725D004ECE90 /* XCRemoteSwiftPackageReference "WasmTransformer" */;
+			productName = WasmTransformer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D1FF9889257D7116004ECE90 /* Project object */;
 }
