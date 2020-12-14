@@ -33,7 +33,15 @@ let rootEnvironment = RootEnvironment(
   },
   profile: { url in
     Just(url)
-      .tryMap { try .init(url: url, sections: sizeProfiler([UInt8](Data(contentsOf: $0)))) }
+      .tryMap {
+        let data = try Data(contentsOf: $0)
+        return try .init(
+          filename: url.lastPathComponent,
+          totalSize: .init(value: Double(data.count), unit: .bytes),
+          sections: sizeProfiler(.init(data)),
+          data: data
+        )
+      }
       .subscribe(on: profilerQueue)
       .eraseToEffect()
   }

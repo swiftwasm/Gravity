@@ -5,17 +5,11 @@
 //  Created by Max Desiatov on 13/12/2020.
 //
 
-import struct WasmTransformer.SectionInfo
 import ComposableArchitecture
 import Combine
 
-struct WasmFile: Equatable {
-  let url: URL
-  let sections: [SectionInfo]
-}
-
 struct RootState: Equatable {
-  var openedFile: WasmFile?
+  var openedFile: WasmDocument?
   var isLoading = false
 
   var alert: AlertState<AlertAction>?
@@ -36,7 +30,7 @@ enum AlertAction {
 enum RootAction {
   case openFile
   case openFileResponse(URL?)
-  case profilerResponse(Result<WasmFile, Error>)
+  case profilerResponse(Result<WasmDocument, Error>)
   case alert(AlertAction)
 }
 
@@ -45,7 +39,7 @@ typealias RootStore = Store<RootState, RootAction>
 struct RootEnvironment {
   let mainQueue: AnySchedulerOf<DispatchQueue>
   let openFile: () -> Effect<URL?, Never>
-  let profile: (URL) -> Effect<WasmFile, Error>
+  let profile: (URL) -> Effect<WasmDocument, Error>
 }
 
 let rootReducer = Reducer<RootState, RootAction, RootEnvironment> { state, action, environment in

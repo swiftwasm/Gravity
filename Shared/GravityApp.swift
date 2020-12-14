@@ -10,9 +10,13 @@ import SwiftUI
 @main
 struct GravityApp: App {
   var body: some Scene {
-    WindowGroup {
+    DocumentGroup(viewing: WasmDocument.self) {
       ContentView(
-        store: .init(initialState: .init(), reducer: rootReducer, environment: rootEnvironment)
+        store: .init(
+          initialState: .init(openedFile: $0.document),
+          reducer: rootReducer,
+          environment: rootEnvironment
+        )
       )
     }
   }

@@ -8,6 +8,13 @@
 import ComposableArchitecture
 import SwiftUI
 
+let measurementFormatter: MeasurementFormatter = {
+  let result = MeasurementFormatter()
+  result.unitStyle = .short
+  result.unitOptions = [.naturalScale]
+  return result
+}()
+
 struct ContentView: View {
   let store: RootStore
 
@@ -18,7 +25,7 @@ struct ContentView: View {
         Spacer()
         WithViewStore(store) { viewStore in
           if let file = viewStore.openedFile {
-            Text("\(file.url.lastPathComponent)")
+            Text("\(file.filename), total size: \(file.totalSize, formatter: measurementFormatter)")
             List(file.sections, id: \.startOffset) {
               SectionItem(section: $0)
             }

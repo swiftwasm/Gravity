@@ -6,15 +6,8 @@
 //
 
 import Foundation
-import WasmTransformer
 import SwiftUI
-
-private let formatter: MeasurementFormatter = {
-  let result = MeasurementFormatter()
-  result.unitStyle = .short
-  result.unitOptions = [.naturalScale]
-  return result
-}()
+import WasmTransformer
 
 extension SectionType: CustomStringConvertible {
   public var description: String {
@@ -46,6 +39,10 @@ struct SectionItem: View {
   let section: SectionInfo
 
   var body: some View {
-    Text("\(section.type.description): \(section.sizeMeasurement, formatter: formatter)")
+    HStack {
+      Text(section.type.description)
+      Spacer()
+      Text("\(section.sizeMeasurement, formatter: measurementFormatter)")
+    }
   }
 }

@@ -14,6 +14,8 @@
 		D192777D258795410071A096 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192777B258795410071A096 /* Environment.swift */; };
 		D192778F2587AEF70071A096 /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192778E2587AEF70071A096 /* SectionItem.swift */; };
 		D19277902587AEF70071A096 /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192778E2587AEF70071A096 /* SectionItem.swift */; };
+		D19277942587C90A0071A096 /* WasmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277932587C90A0071A096 /* WasmDocument.swift */; };
+		D19277952587C90A0071A096 /* WasmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277932587C90A0071A096 /* WasmDocument.swift */; };
 		D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
@@ -27,6 +29,7 @@
 		D12CBCD32586BADA00AB2B1B /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		D192777B258795410071A096 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D192778E2587AEF70071A096 /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
+		D19277932587C90A0071A096 /* WasmDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasmDocument.swift; sourceTree = "<group>"; };
 		D1FF988E257D7116004ECE90 /* GravityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityApp.swift; sourceTree = "<group>"; };
 		D1FF988F257D7116004ECE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1FF9890257D7119004ECE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 				D1FF9890257D7119004ECE90 /* Assets.xcassets */,
 				D192777B258795410071A096 /* Environment.swift */,
 				D192778E2587AEF70071A096 /* SectionItem.swift */,
+				D19277932587C90A0071A096 /* WasmDocument.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 			files = (
 				D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */,
 				D192777C258795410071A096 /* Environment.swift in Sources */,
+				D19277942587C90A0071A096 /* WasmDocument.swift in Sources */,
 				D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D192778F2587AEF70071A096 /* SectionItem.swift in Sources */,
 				D12CBCD42586BADA00AB2B1B /* State.swift in Sources */,
@@ -227,6 +232,7 @@
 			files = (
 				D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */,
 				D192777D258795410071A096 /* Environment.swift in Sources */,
+				D19277952587C90A0071A096 /* WasmDocument.swift in Sources */,
 				D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D19277902587AEF70071A096 /* SectionItem.swift in Sources */,
 				D12CBCD52586BADA00AB2B1B /* State.swift in Sources */,
@@ -398,6 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
@@ -422,6 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
