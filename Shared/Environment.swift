@@ -34,12 +34,12 @@ let rootEnvironment = RootEnvironment(
   profile: { url in
     Just(url)
       .tryMap {
-        let data = try Data(contentsOf: $0)
+        var input = try InputByteStream(bytes: [UInt8](Data(contentsOf: $0)))
         return try .init(
           filename: url.lastPathComponent,
-          totalSize: .init(value: Double(data.count), unit: .bytes),
-          sections: sizeProfiler(.init(data)),
-          data: data
+          totalSize: .init(value: Double(input.bytes.count), unit: .bytes),
+          sections: input.readSectionsInfo(),
+          input: input
         )
       }
       .subscribe(on: profilerQueue)

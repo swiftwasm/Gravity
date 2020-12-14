@@ -32,8 +32,8 @@
         "package": "WasmTransformer",
         "repositoryURL": "https://github.com/swiftwasm/WasmTransformer.git",
         "state": {
-          "branch": "main",
-          "revision": "ff81804ecd1ca5330ea9f9f23790ad9fa9ae98a3",
+          "branch": "public-typesection",
+          "revision": "72b2968ab1d17c1fc7a61c755603116d766868ef",
           "version": null
         }
       }

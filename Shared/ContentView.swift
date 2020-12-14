@@ -25,7 +25,7 @@ struct ContentView: View {
           VStack {
             Text("Total size: \(file.totalSize, formatter: measurementFormatter)")
             List(file.sections, id: \.startOffset) { section in
-              NavigationLink(destination: SectionDetails(fileData: file.data, section: section)) {
+              NavigationLink(destination: SectionDetails(input: file.input, section: section)) {
                 SectionItem(section: section)
               }
             }

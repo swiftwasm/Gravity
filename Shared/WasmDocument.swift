@@ -15,17 +15,23 @@ extension UTType {
   }
 }
 
+extension InputByteStream: Equatable {
+  public static func == (lhs: InputByteStream, rhs: InputByteStream) -> Bool {
+    lhs.bytes == rhs.bytes && lhs.offset == rhs.offset
+  }
+}
+
 struct WasmDocument: FileDocument, Equatable {
   init(
     filename: String,
     totalSize: Measurement<UnitInformationStorage>,
     sections: [SectionInfo],
-    data: Data
+    input: InputByteStream
   ) {
     self.filename = filename
     self.totalSize = totalSize
     self.sections = sections
-    self.data = data
+    self.input = input
   }
 
   enum Error: Swift.Error {
@@ -35,7 +41,7 @@ struct WasmDocument: FileDocument, Equatable {
   let filename: String
   let totalSize: Measurement<UnitInformationStorage>
   let sections: [SectionInfo]
-  let data: Data
+  var input: InputByteStream
 
   static let readableContentTypes = [UTType.wasm]
 
@@ -49,12 +55,12 @@ struct WasmDocument: FileDocument, Equatable {
     }
 
     self.filename = filename
-    self.data = data
+    self.input = .init(bytes: [UInt8](data))
     totalSize = .init(value: Double(data.count), unit: .bytes)
-    sections = try sizeProfiler(.init(data))
+    sections = try input.readSectionsInfo()
   }
 
   func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-    .init(regularFileWithContents: data)
+    .init(regularFileWithContents: Data(input.bytes))
   }
 }

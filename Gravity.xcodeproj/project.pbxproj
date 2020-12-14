@@ -18,6 +18,8 @@
 		D19277952587C90A0071A096 /* WasmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277932587C90A0071A096 /* WasmDocument.swift */; };
 		D192779B2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
 		D192779C2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
+		D19277A825880BD10071A096 /* DWARF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277A725880BD10071A096 /* DWARF.swift */; };
+		D19277A925880BD10071A096 /* DWARF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277A725880BD10071A096 /* DWARF.swift */; };
 		D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
@@ -33,6 +35,7 @@
 		D192778E2587AEF70071A096 /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
 		D19277932587C90A0071A096 /* WasmDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasmDocument.swift; sourceTree = "<group>"; };
 		D192779A2587EF340071A096 /* SectionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetails.swift; sourceTree = "<group>"; };
+		D19277A725880BD10071A096 /* DWARF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DWARF.swift; sourceTree = "<group>"; };
 		D1FF988E257D7116004ECE90 /* GravityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityApp.swift; sourceTree = "<group>"; };
 		D1FF988F257D7116004ECE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1FF9890257D7119004ECE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FF988F257D7116004ECE90 /* ContentView.swift */,
+				D19277A725880BD10071A096 /* DWARF.swift */,
 				D192777B258795410071A096 /* Environment.swift */,
 				D1FF988E257D7116004ECE90 /* GravityApp.swift */,
 				D192779A2587EF340071A096 /* SectionDetails.swift */,
@@ -223,6 +227,7 @@
 			files = (
 				D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */,
 				D192777C258795410071A096 /* Environment.swift in Sources */,
+				D19277A825880BD10071A096 /* DWARF.swift in Sources */,
 				D19277942587C90A0071A096 /* WasmDocument.swift in Sources */,
 				D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D192779B2587EF340071A096 /* SectionDetails.swift in Sources */,
@@ -237,6 +242,7 @@
 			files = (
 				D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */,
 				D192777D258795410071A096 /* Environment.swift in Sources */,
+				D19277A925880BD10071A096 /* DWARF.swift in Sources */,
 				D19277952587C90A0071A096 /* WasmDocument.swift in Sources */,
 				D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D192779C2587EF340071A096 /* SectionDetails.swift in Sources */,
@@ -499,7 +505,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swiftwasm/WasmTransformer.git";
 			requirement = {
-				branch = main;
+				branch = "public-typesection";
 				kind = branch;
 			};
 		};
