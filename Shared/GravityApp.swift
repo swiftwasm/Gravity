@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct GravityApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView(
+        store: .init(initialState: .init(), reducer: rootReducer, environment: rootEnvironment)
+      )
     }
+  }
 }

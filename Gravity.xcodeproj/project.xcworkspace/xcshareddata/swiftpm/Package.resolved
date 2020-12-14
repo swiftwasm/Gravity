@@ -32,8 +32,8 @@
         "package": "WasmTransformer",
         "repositoryURL": "https://github.com/swiftwasm/WasmTransformer.git",
         "state": {
-          "branch": "size-profiler",
-          "revision": "3cb5398f070f70d4ff1329cce3891c2514227c15",
+          "branch": "main",
+          "revision": "ff81804ecd1ca5330ea9f9f23790ad9fa9ae98a3",
           "version": null
         }
       }
