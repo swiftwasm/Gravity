@@ -19,25 +19,31 @@ struct ContentView: View {
   let store: RootStore
 
   var body: some View {
-    HStack {
-      Spacer()
-      VStack {
-        Spacer()
-        WithViewStore(store) { viewStore in
-          if let file = viewStore.openedFile {
-            Text("\(file.filename), total size: \(file.totalSize, formatter: measurementFormatter)")
-            List(file.sections, id: \.startOffset) {
-              SectionItem(section: $0)
+    WithViewStore(store) { viewStore in
+      if let file = viewStore.openedFile {
+        NavigationView {
+          VStack {
+            Text("Total size: \(file.totalSize, formatter: measurementFormatter)")
+            List(file.sections, id: \.startOffset) { section in
+              NavigationLink(destination: SectionDetails(fileData: file.data, section: section)) {
+                SectionItem(section: section)
+              }
             }
-          } else {
+          }.frame(width: 200)
+        }
+      } else {
+        HStack {
+          Spacer()
+          VStack {
+            Spacer()
             Button("Open...") {
               viewStore.send(.openFile)
             }
+            Spacer()
           }
+          Spacer()
         }
-        Spacer()
       }
-      Spacer()
     }
   }
 }
