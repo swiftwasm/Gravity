@@ -25,8 +25,10 @@ struct ContentView: View {
           VStack {
             Text("Total size: \(file.totalSize, formatter: measurementFormatter)")
             List(file.sections, id: \.startOffset) { section in
-              NavigationLink(destination: SectionDetails(input: file.input, section: section)) {
-                SectionItem(section: section)
+              if let id = file.sections.firstIndex(where: { $0.startOffset == section.startOffset }) {
+                NavigationLink(destination: SectionDetails(file: file, sectionID: id)) {
+                  SectionItem(section: section)
+                }
               }
             }
           }.frame(width: 200)

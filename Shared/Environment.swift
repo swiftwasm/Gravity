@@ -34,13 +34,7 @@ let rootEnvironment = RootEnvironment(
   profile: { url in
     Just(url)
       .tryMap {
-        var input = try InputByteStream(bytes: [UInt8](Data(contentsOf: $0)))
-        return try .init(
-          filename: url.lastPathComponent,
-          totalSize: .init(value: Double(input.bytes.count), unit: .bytes),
-          sections: input.readSectionsInfo(),
-          input: input
-        )
+        try .init(filename: url.lastPathComponent, data: Data(contentsOf: $0))
       }
       .subscribe(on: profilerQueue)
       .eraseToEffect()

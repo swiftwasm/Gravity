@@ -21,27 +21,50 @@ extension InputByteStream: Equatable {
   }
 }
 
+extension FuncSignature: Equatable {
+  public static func == (lhs: FuncSignature, rhs: FuncSignature) -> Bool {
+    lhs.params == rhs.params && lhs.results == rhs.results
+  }
+}
+
+extension TypeSection: Equatable {
+  public static func == (lhs: TypeSection, rhs: TypeSection) -> Bool {
+    lhs.signatures == rhs.signatures
+  }
+}
+
+extension FuncSignature: Hashable {
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(params)
+    hasher.combine(results)
+  }
+}
+
 struct WasmDocument: FileDocument, Equatable {
   init(
     filename: String,
-    totalSize: Measurement<UnitInformationStorage>,
-    sections: [SectionInfo],
-    input: InputByteStream
-  ) {
+    data: Data
+  ) throws {
     self.filename = filename
-    self.totalSize = totalSize
-    self.sections = sections
-    self.input = input
+    self.totalSize = .init(value: Double(data.count), unit: .bytes)
+    self.input = .init(bytes: [UInt8](data))
+    self.sections = try input.readSectionsInfo()
+    guard let typeSection = sections.first(where: { $0.type == .type })
+    else { throw Error.typeSectionAbsent }
+    input.seek(typeSection.endOffset - typeSection.size)
+    self.typeSection = try TypeSection(from: &input)
   }
 
   enum Error: Swift.Error {
     case readFailure
+    case typeSectionAbsent
   }
 
   let filename: String
   let totalSize: Measurement<UnitInformationStorage>
-  let sections: [SectionInfo]
   var input: InputByteStream
+  let sections: [SectionInfo]
+  let typeSection: TypeSection
 
   static let readableContentTypes = [UTType.wasm]
 
@@ -54,10 +77,7 @@ struct WasmDocument: FileDocument, Equatable {
       throw Error.readFailure
     }
 
-    self.filename = filename
-    self.input = .init(bytes: [UInt8](data))
-    totalSize = .init(value: Double(data.count), unit: .bytes)
-    sections = try input.readSectionsInfo()
+    try self.init(filename: filename, data: data)
   }
 
   func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
