@@ -24,14 +24,17 @@ struct SectionDetails: View {
   let file: WasmDocument
   let sectionID: Int
 
+  private func customSectionName(_ section: SectionInfo) -> String? {
+    var input = file.input
+    input.seek(section.endOffset - section.size)
+    return input.readName()
+  }
+
   var body: some View {
     let section = file.sections[sectionID]
+    let name = customSectionName(section)
     VStack {
-      if section.type == .custom, let name = { () -> String? in
-        var input = file.input
-        input.seek(section.endOffset - section.size)
-        return input.readName()
-      }() {
+      if section.type == .custom, let name = name {
         Text("Custom section name: \(name)")
           .font(.headline)
           .padding()
@@ -40,6 +43,12 @@ struct SectionDetails: View {
       switch section.type {
       case .type:
         TypeSectionView(signatures: file.typeSection.signatures)
+      case .custom where name == "name":
+        if let nameSection = try? NameSection(file.input, section) {
+          NameSectionView(section: nameSection)
+        } else {
+          RawSectionView(input: file.input, section: section)
+        }
       default:
         RawSectionView(input: file.input, section: section)
       }

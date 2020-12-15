@@ -18,12 +18,14 @@
 		D19277952587C90A0071A096 /* WasmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277932587C90A0071A096 /* WasmDocument.swift */; };
 		D192779B2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
 		D192779C2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
-		D19277A825880BD10071A096 /* DWARF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277A725880BD10071A096 /* DWARF.swift */; };
-		D19277A925880BD10071A096 /* DWARF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277A725880BD10071A096 /* DWARF.swift */; };
+		D1BEDBCC258927FC00DEEF96 /* NameSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */; };
+		D1BEDBCD258927FC00DEEF96 /* NameSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */; };
 		D1C5A9CF2588D7D400F74991 /* RawSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */; };
 		D1C5A9D02588D7D400F74991 /* RawSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */; };
 		D1C5A9D62588DA0300F74991 /* TypeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */; };
 		D1C5A9D72588DA0300F74991 /* TypeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */; };
+		D1C5A9DB2588E9D000F74991 /* NameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9DA2588E9D000F74991 /* NameSection.swift */; };
+		D1C5A9DC2588E9D000F74991 /* NameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9DA2588E9D000F74991 /* NameSection.swift */; };
 		D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
@@ -39,9 +41,10 @@
 		D192778E2587AEF70071A096 /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
 		D19277932587C90A0071A096 /* WasmDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasmDocument.swift; sourceTree = "<group>"; };
 		D192779A2587EF340071A096 /* SectionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetails.swift; sourceTree = "<group>"; };
-		D19277A725880BD10071A096 /* DWARF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DWARF.swift; sourceTree = "<group>"; };
+		D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSectionView.swift; sourceTree = "<group>"; };
 		D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawSectionView.swift; sourceTree = "<group>"; };
 		D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSectionView.swift; sourceTree = "<group>"; };
+		D1C5A9DA2588E9D000F74991 /* NameSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSection.swift; sourceTree = "<group>"; };
 		D1FF988E257D7116004ECE90 /* GravityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityApp.swift; sourceTree = "<group>"; };
 		D1FF988F257D7116004ECE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1FF9890257D7119004ECE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 				D192779A2587EF340071A096 /* SectionDetails.swift */,
 				D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */,
 				D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */,
+				D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */,
 			);
 			path = SectionDetails;
 			sourceTree = "<group>";
@@ -98,14 +102,14 @@
 			isa = PBXGroup;
 			children = (
 				D1FF988F257D7116004ECE90 /* ContentView.swift */,
-				D19277A725880BD10071A096 /* DWARF.swift */,
 				D192777B258795410071A096 /* Environment.swift */,
 				D1FF988E257D7116004ECE90 /* GravityApp.swift */,
-				D1C5A9CB2588D7C300F74991 /* SectionDetails */,
+				D1C5A9DA2588E9D000F74991 /* NameSection.swift */,
 				D192778E2587AEF70071A096 /* SectionItem.swift */,
 				D12CBCD32586BADA00AB2B1B /* State.swift */,
 				D19277932587C90A0071A096 /* WasmDocument.swift */,
 				D1FF9890257D7119004ECE90 /* Assets.xcassets */,
+				D1C5A9CB2588D7C300F74991 /* SectionDetails */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -244,12 +248,13 @@
 				D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */,
 				D192777C258795410071A096 /* Environment.swift in Sources */,
 				D1C5A9D62588DA0300F74991 /* TypeSectionView.swift in Sources */,
-				D19277A825880BD10071A096 /* DWARF.swift in Sources */,
 				D19277942587C90A0071A096 /* WasmDocument.swift in Sources */,
+				D1BEDBCC258927FC00DEEF96 /* NameSectionView.swift in Sources */,
 				D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D1C5A9CF2588D7D400F74991 /* RawSectionView.swift in Sources */,
 				D192779B2587EF340071A096 /* SectionDetails.swift in Sources */,
 				D192778F2587AEF70071A096 /* SectionItem.swift in Sources */,
+				D1C5A9DB2588E9D000F74991 /* NameSection.swift in Sources */,
 				D12CBCD42586BADA00AB2B1B /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,12 +266,13 @@
 				D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */,
 				D192777D258795410071A096 /* Environment.swift in Sources */,
 				D1C5A9D72588DA0300F74991 /* TypeSectionView.swift in Sources */,
-				D19277A925880BD10071A096 /* DWARF.swift in Sources */,
 				D19277952587C90A0071A096 /* WasmDocument.swift in Sources */,
+				D1BEDBCD258927FC00DEEF96 /* NameSectionView.swift in Sources */,
 				D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D1C5A9D02588D7D400F74991 /* RawSectionView.swift in Sources */,
 				D192779C2587EF340071A096 /* SectionDetails.swift in Sources */,
 				D19277902587AEF70071A096 /* SectionItem.swift in Sources */,
+				D1C5A9DC2588E9D000F74991 /* NameSection.swift in Sources */,
 				D12CBCD52586BADA00AB2B1B /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
