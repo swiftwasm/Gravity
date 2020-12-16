@@ -21,7 +21,7 @@ struct NameSectionView: View {
       ScrollView {
         LazyVStack(alignment: .leading) {
           ForEach(
-            section.functionNames.map { ($0, $1) }.sorted { $0.0 < $1.0 },
+            section.functionNames.map { ($0, $1) },
             id: \.0
           ) { idx, name in
             HStack {

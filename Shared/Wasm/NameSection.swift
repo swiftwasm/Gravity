@@ -9,7 +9,7 @@ import Darwin
 import WasmTransformer
 
 @_silgen_name("swift_demangle")
-public func _stdlib_demangleImpl(
+public func _stdlib_demangleImplementation(
   mangledName: UnsafePointer<CChar>?,
   mangledNameLength: UInt,
   outputBuffer: UnsafeMutablePointer<CChar>?,
@@ -19,7 +19,7 @@ public func _stdlib_demangleImpl(
 
 func demangle(_ mangledName: String) -> String {
   mangledName.utf8CString.withUnsafeBufferPointer { mangledNameUTF8CStr in
-    let demangledNamePtr = _stdlib_demangleImpl(
+    let demangledNamePtr = _stdlib_demangleImplementation(
       mangledName: mangledNameUTF8CStr.baseAddress,
       mangledNameLength: UInt(mangledNameUTF8CStr.count - 1),
       outputBuffer: nil,
@@ -57,8 +57,7 @@ struct NameSection: Equatable {
   private(set) var moduleName: String? = nil
   private(set) var functionNames = [Int: String]()
 
-  init(_ input: InputByteStream, _ section: SectionInfo) throws {
-    var input = input
+  init(_ input: inout InputByteStream, _ section: SectionInfo) throws {
     input.seek(section.endOffset - section.size)
     let name = input.readName()
     precondition(name == "name")

@@ -18,6 +18,10 @@
 		D19277952587C90A0071A096 /* WasmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277932587C90A0071A096 /* WasmDocument.swift */; };
 		D192779B2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
 		D192779C2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
+		D1B532C5258A265400543607 /* FuncSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C4258A265400543607 /* FuncSection.swift */; };
+		D1B532C6258A265400543607 /* FuncSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C4258A265400543607 /* FuncSection.swift */; };
+		D1B532CA258A347400543607 /* FuncSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C9258A347400543607 /* FuncSectionView.swift */; };
+		D1B532CB258A347400543607 /* FuncSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C9258A347400543607 /* FuncSectionView.swift */; };
 		D1BEDBCC258927FC00DEEF96 /* NameSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */; };
 		D1BEDBCD258927FC00DEEF96 /* NameSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */; };
 		D1C5A9CF2588D7D400F74991 /* RawSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */; };
@@ -41,6 +45,8 @@
 		D192778E2587AEF70071A096 /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
 		D19277932587C90A0071A096 /* WasmDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasmDocument.swift; sourceTree = "<group>"; };
 		D192779A2587EF340071A096 /* SectionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetails.swift; sourceTree = "<group>"; };
+		D1B532C4258A265400543607 /* FuncSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncSection.swift; sourceTree = "<group>"; };
+		D1B532C9258A347400543607 /* FuncSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncSectionView.swift; sourceTree = "<group>"; };
 		D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSectionView.swift; sourceTree = "<group>"; };
 		D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawSectionView.swift; sourceTree = "<group>"; };
 		D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSectionView.swift; sourceTree = "<group>"; };
@@ -75,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1B532C1258A259C00543607 /* Wasm */ = {
+			isa = PBXGroup;
+			children = (
+				D1C5A9DA2588E9D000F74991 /* NameSection.swift */,
+				D19277932587C90A0071A096 /* WasmDocument.swift */,
+				D1B532C4258A265400543607 /* FuncSection.swift */,
+			);
+			path = Wasm;
+			sourceTree = "<group>";
+		};
 		D1C5A9CB2588D7C300F74991 /* SectionDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +98,7 @@
 				D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */,
 				D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */,
 				D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */,
+				D1B532C9258A347400543607 /* FuncSectionView.swift */,
 			);
 			path = SectionDetails;
 			sourceTree = "<group>";
@@ -104,12 +121,11 @@
 				D1FF988F257D7116004ECE90 /* ContentView.swift */,
 				D192777B258795410071A096 /* Environment.swift */,
 				D1FF988E257D7116004ECE90 /* GravityApp.swift */,
-				D1C5A9DA2588E9D000F74991 /* NameSection.swift */,
 				D192778E2587AEF70071A096 /* SectionItem.swift */,
 				D12CBCD32586BADA00AB2B1B /* State.swift */,
-				D19277932587C90A0071A096 /* WasmDocument.swift */,
 				D1FF9890257D7119004ECE90 /* Assets.xcassets */,
 				D1C5A9CB2588D7C300F74991 /* SectionDetails */,
+				D1B532C1258A259C00543607 /* Wasm */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -245,7 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B532CA258A347400543607 /* FuncSectionView.swift in Sources */,
 				D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */,
+				D1B532C5258A265400543607 /* FuncSection.swift in Sources */,
 				D192777C258795410071A096 /* Environment.swift in Sources */,
 				D1C5A9D62588DA0300F74991 /* TypeSectionView.swift in Sources */,
 				D19277942587C90A0071A096 /* WasmDocument.swift in Sources */,
@@ -263,7 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B532CB258A347400543607 /* FuncSectionView.swift in Sources */,
 				D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */,
+				D1B532C6258A265400543607 /* FuncSection.swift in Sources */,
 				D192777D258795410071A096 /* Environment.swift in Sources */,
 				D1C5A9D72588DA0300F74991 /* TypeSectionView.swift in Sources */,
 				D19277952587C90A0071A096 /* WasmDocument.swift in Sources */,

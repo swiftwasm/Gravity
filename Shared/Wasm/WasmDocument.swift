@@ -16,19 +16,19 @@ extension UTType {
 }
 
 extension InputByteStream: Equatable {
-  public static func == (lhs: InputByteStream, rhs: InputByteStream) -> Bool {
+  public static func ==(lhs: InputByteStream, rhs: InputByteStream) -> Bool {
     lhs.bytes == rhs.bytes && lhs.offset == rhs.offset
   }
 }
 
 extension FuncSignature: Equatable {
-  public static func == (lhs: FuncSignature, rhs: FuncSignature) -> Bool {
+  public static func ==(lhs: FuncSignature, rhs: FuncSignature) -> Bool {
     lhs.params == rhs.params && lhs.results == rhs.results
   }
 }
 
 extension TypeSection: Equatable {
-  public static func == (lhs: TypeSection, rhs: TypeSection) -> Bool {
+  public static func ==(lhs: TypeSection, rhs: TypeSection) -> Bool {
     lhs.signatures == rhs.signatures
   }
 }
@@ -46,18 +46,40 @@ struct WasmDocument: FileDocument, Equatable {
     data: Data
   ) throws {
     self.filename = filename
-    self.totalSize = .init(value: Double(data.count), unit: .bytes)
-    self.input = .init(bytes: [UInt8](data))
-    self.sections = try input.readSectionsInfo()
-    guard let typeSection = sections.first(where: { $0.type == .type })
-    else { throw Error.typeSectionAbsent }
-    input.seek(typeSection.endOffset - typeSection.size)
-    self.typeSection = try TypeSection(from: &input)
+    totalSize = .init(value: Double(data.count), unit: .bytes)
+    input = .init(bytes: [UInt8](data))
+    sections = try input.readSectionsInfo()
+
+    var maybeTypeSection: TypeSection?
+    var maybeFuncSection: FuncSection?
+    for section in sections {
+      switch section.type {
+      case .type:
+        input.seek(section.endOffset - section.size)
+        maybeTypeSection = try TypeSection(from: &input)
+      case .function:
+        input.seek(section.endOffset - section.size)
+        maybeFuncSection = try FuncSection(&input)
+      case .custom:
+        input.seek(section.endOffset - section.size)
+        if let name = input.readName(), name == "name" {
+          nameSection = try NameSection(&input, section)
+        }
+      default: continue
+      }
+    }
+
+    guard let typeSection = maybeTypeSection
+    else { throw Error.requiredSectionAbsent(.type) }
+    guard let funcSection = maybeFuncSection
+    else { throw Error.requiredSectionAbsent(.function) }
+    self.typeSection = typeSection
+    self.funcSection = funcSection
   }
 
   enum Error: Swift.Error {
     case readFailure
-    case typeSectionAbsent
+    case requiredSectionAbsent(SectionType)
   }
 
   let filename: String
@@ -65,6 +87,8 @@ struct WasmDocument: FileDocument, Equatable {
   var input: InputByteStream
   let sections: [SectionInfo]
   let typeSection: TypeSection
+  let funcSection: FuncSection
+  private(set) var nameSection: NameSection?
 
   static let readableContentTypes = [UTType.wasm]
 

@@ -43,8 +43,18 @@ struct SectionDetails: View {
       switch section.type {
       case .type:
         TypeSectionView(signatures: file.typeSection.signatures)
+      case .function:
+        if let nameSection = file.nameSection {
+          FuncSectionView(
+            typeSection: file.typeSection,
+            funcSection: file.funcSection,
+            nameSection: nameSection
+          )
+        } else {
+          RawSectionView(input: file.input, section: section)
+        }
       case .custom where name == "name":
-        if let nameSection = try? NameSection(file.input, section) {
+        if let nameSection = file.nameSection {
           NameSectionView(section: nameSection)
         } else {
           RawSectionView(input: file.input, section: section)
