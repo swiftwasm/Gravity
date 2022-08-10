@@ -49,23 +49,36 @@ struct WasmDocument: FileDocument, Equatable {
     totalSize = .init(value: Double(data.count), unit: .bytes)
     input = .init(bytes: [UInt8](data))
     sections = try input.readSectionsInfo()
+    input.seek(8)
+
+    var moduleReader = ModuleReader(input: input)
 
     var maybeTypeSection: TypeSection?
     var maybeFuncSection: FuncSection?
-    for section in sections {
-      switch section.type {
-      case .type:
-        input.seek(section.endOffset - section.size)
-        maybeTypeSection = try TypeSection(from: &input)
-      case .function:
-        input.seek(section.endOffset - section.size)
-        maybeFuncSection = try FuncSection(&input)
-      case .custom:
-        input.seek(section.endOffset - section.size)
+
+    var sectionIndex = 0
+    while !moduleReader.isEOF {
+      defer {
+        sectionIndex += 1
+      }
+
+      switch try moduleReader.readSection() {
+      case .type(let reader):
+       maybeTypeSection = try TypeSection(signatures: reader.collect())
+
+      case .rawSection(type: .custom, content: let content):
+        var input = InputByteStream(bytes: content)
+
         if let name = input.readName(), name == "name" {
-          nameSection = try NameSection(&input, section)
+          input.seek(sections[sectionIndex].contentStart)
+          nameSection = try NameSection(&input)
         }
-      default: continue
+
+      case .function(let reader):
+        maybeFuncSection = try FuncSection(typeIndices: reader.collect().map(\.value))
+
+      default:
+        continue
       }
     }
 

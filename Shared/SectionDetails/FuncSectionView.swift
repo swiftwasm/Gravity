@@ -19,7 +19,7 @@ struct FuncSectionView: View {
     functions = funcSection.typeIndices.enumerated().map {
       .init(
         id: $0,
-        signature: typeSection.signatures[$1],
+        signature: typeSection.signatures[Int($1)],
         name: nameSection.functionNames[$0] ?? "\($0)"
       )
     }

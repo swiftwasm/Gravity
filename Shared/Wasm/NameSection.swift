@@ -46,6 +46,15 @@ extension InputByteStream {
     let bytes = read(length)
     return String(bytes: bytes, encoding: .utf8)
   }
+
+  mutating func readNamesMapSubsection(_ dictionary: inout [Int: String]) {
+      let count = readVarUInt32()
+      for _ in 0..<count {
+        let idx = Int(readVarUInt32())
+        let rawName = readName()
+        dictionary[idx] = rawName.map(demangle)
+      }
+  }
 }
 
 /// https://webassembly.github.io/spec/core/appendix/custom.html#name-section
@@ -56,13 +65,14 @@ struct NameSection: Equatable {
 
   private(set) var moduleName: String? = nil
   private(set) var functionNames = [Int: String]()
+  private(set) var globalNames = [Int: String]()
+  private(set) var dataSegmentNames = [Int: String]()
 
-  init(_ input: inout InputByteStream, _ section: SectionInfo) throws {
-    input.seek(section.endOffset - section.size)
+  init(_ input: inout InputByteStream) throws {
     let name = input.readName()
     precondition(name == "name")
 
-    while input.offset < section.endOffset {
+    while !input.isEOF {
       // https://webassembly.github.io/spec/core/appendix/custom.html#subsections
       let subsectionID = input.read(1).first
       _ = input.readVarUInt32()
@@ -70,14 +80,12 @@ struct NameSection: Equatable {
       case 0:
         self.moduleName = input.readName()
       case 1:
-        var functionNames = [Int: String]()
-        let functionsCount = input.readVarUInt32()
-        for _ in 0..<functionsCount {
-          let idx = Int(input.readVarUInt32())
-          let rawName = input.readName()
-          functionNames[idx] = rawName.map(demangle)
-        }
-        self.functionNames = functionNames
+        input.readNamesMapSubsection(&functionNames)
+      case 7:
+        input.readNamesMapSubsection(&globalNames)
+      case 9:
+        input.readNamesMapSubsection(&dataSegmentNames)
+
       default:
         throw Error.unknownSubsection(subsectionID)
       }

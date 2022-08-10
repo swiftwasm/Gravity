@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D119897228A15CF000F83E46 /* TypeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D119897128A15CF000F83E46 /* TypeSection.swift */; };
+		D119897328A15CF000F83E46 /* TypeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D119897128A15CF000F83E46 /* TypeSection.swift */; };
 		D12CBCD02586BA0D00AB2B1B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D12CBCCF2586BA0D00AB2B1B /* ComposableArchitecture */; };
 		D12CBCD42586BADA00AB2B1B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CBCD32586BADA00AB2B1B /* State.swift */; };
 		D12CBCD52586BADA00AB2B1B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CBCD32586BADA00AB2B1B /* State.swift */; };
@@ -40,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D119897128A15CF000F83E46 /* TypeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSection.swift; sourceTree = "<group>"; };
 		D12CBCD32586BADA00AB2B1B /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		D192777B258795410071A096 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D192778E2587AEF70071A096 /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 				D1C5A9DA2588E9D000F74991 /* NameSection.swift */,
 				D19277932587C90A0071A096 /* WasmDocument.swift */,
 				D1B532C4258A265400543607 /* FuncSection.swift */,
+				D119897128A15CF000F83E46 /* TypeSection.swift */,
 			);
 			path = Wasm;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 				D1C5A9D62588DA0300F74991 /* TypeSectionView.swift in Sources */,
 				D19277942587C90A0071A096 /* WasmDocument.swift in Sources */,
 				D1BEDBCC258927FC00DEEF96 /* NameSectionView.swift in Sources */,
+				D119897228A15CF000F83E46 /* TypeSection.swift in Sources */,
 				D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D1C5A9CF2588D7D400F74991 /* RawSectionView.swift in Sources */,
 				D192779B2587EF340071A096 /* SectionDetails.swift in Sources */,
@@ -288,6 +293,7 @@
 				D1C5A9D72588DA0300F74991 /* TypeSectionView.swift in Sources */,
 				D19277952587C90A0071A096 /* WasmDocument.swift in Sources */,
 				D1BEDBCD258927FC00DEEF96 /* NameSectionView.swift in Sources */,
+				D119897328A15CF000F83E46 /* TypeSection.swift in Sources */,
 				D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D1C5A9D02588D7D400F74991 /* RawSectionView.swift in Sources */,
 				D192779C2587EF340071A096 /* SectionDetails.swift in Sources */,
@@ -543,16 +549,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.34.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.39.0;
 			};
 		};
 		D1FF98B1257D725D004ECE90 /* XCRemoteSwiftPackageReference "WasmTransformer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swiftwasm/WasmTransformer.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = revision;
+				revision = 5679ba034e292d6326cfe38a4cb322bba9a9a338;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

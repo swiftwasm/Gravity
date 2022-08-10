@@ -16,7 +16,7 @@ extension SectionType: CustomStringConvertible {
     case .custom: return "custom"
     case .data: return "data"
     case .dataCount: return "dataCount"
-    case .elem: return "elem"
+    case .element: return "elem"
     case .export: return "export"
     case .function: return "function"
     case .global: return "global"
