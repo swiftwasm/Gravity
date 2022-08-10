@@ -6,8 +6,7 @@ import SwiftUI
 import WasmTransformer
 
 struct RawSectionView: View {
-  let input: InputByteStream
-  let section: SectionInfo
+  let bytes: ArraySlice<UInt8>
 
   private let symbolWidth: CGFloat = 16
 
@@ -18,10 +17,10 @@ struct RawSectionView: View {
       ScrollView {
         LazyVStack(alignment: .leading) {
           ForEach(
-            Array(stride(from: section.startOffset, to: section.endOffset, by: symbols)),
+            Array(stride(from: bytes.startIndex, to: bytes.endIndex, by: symbols)),
             id: \.self
           ) {
-            Text(input.bytes[$0..<min($0 + symbols, section.endOffset)].hexEncodedString())
+            Text(bytes[$0..<min($0 + symbols, bytes.endIndex)].hexEncodedString())
               .font(.system(size: 12, weight: .regular, design: .monospaced))
           }
         }.padding([.horizontal, .bottom])

@@ -8,15 +8,15 @@
 import SwiftUI
 import WasmTransformer
 
-enum FunctionOrder: String, CaseIterable, Identifiable, CustomStringConvertible {
-  case appearance
+enum FunctionsWithParametersOrder: String, CaseIterable, Identifiable, CustomStringConvertible {
+  case index
   case numberOfParameters
 
   var id: String { rawValue }
 
   var description: String {
     switch self {
-    case .appearance: return "appearance"
+    case .index: return "index"
     case .numberOfParameters: return "number of parameters"
     }
   }
@@ -30,22 +30,22 @@ extension FuncSignature: CustomStringConvertible {
 
 struct TypeSectionView: View {
   let signatures: [FuncSignature]
-  @State private var orderSelection = FunctionOrder.appearance
+  @State private var orderSelection = FunctionsWithParametersOrder.index
 
   var body: some View {
     VStack {
       Picker("Order by", selection: $orderSelection) {
-        ForEach(FunctionOrder.allCases) {
+        ForEach(FunctionsWithParametersOrder.allCases) {
           Text($0.description).tag($0)
         }
       }
       .pickerStyle(SegmentedPickerStyle())
-      .padding()
+      .padding([.horizontal, .bottom])
 
       ScrollView {
         LazyVStack(alignment: .leading) {
           ForEach(
-            orderSelection == .appearance ?
+            orderSelection == .index ?
               signatures : signatures.sorted { $0.params.count > $1.params.count },
             id: \.self
           ) {

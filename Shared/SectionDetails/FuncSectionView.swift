@@ -27,22 +27,22 @@ struct FuncSectionView: View {
 
   private let functions: [Function]
 
-  @State private var orderSelection = FunctionOrder.appearance
+  @State private var orderSelection = FunctionsWithParametersOrder.index
 
   var body: some View {
     VStack {
       Picker("Order by", selection: $orderSelection) {
-        ForEach(FunctionOrder.allCases) {
+        ForEach(FunctionsWithParametersOrder.allCases) {
           Text($0.description).tag($0)
         }
       }
       .pickerStyle(SegmentedPickerStyle())
-      .padding()
+      .padding([.horizontal, .bottom])
 
       ScrollView {
         LazyVStack {
           ForEach(
-            orderSelection == .appearance ?
+            orderSelection == .index ?
               functions :
               functions.sorted { $0.signature.params.count > $1.signature.params.count }
           ) { f in

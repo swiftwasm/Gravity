@@ -27,9 +27,9 @@ extension FuncSignature: Equatable {
   }
 }
 
-extension TypeSection: Equatable {
-  public static func ==(lhs: TypeSection, rhs: TypeSection) -> Bool {
-    lhs.signatures == rhs.signatures
+extension FunctionBody: Equatable {
+  public static func ==(lhs: FunctionBody, rhs: FunctionBody) -> Bool {
+    lhs.input == rhs.input && lhs.size == rhs.size && lhs.endOffset == rhs.endOffset
   }
 }
 
@@ -55,6 +55,7 @@ struct WasmDocument: FileDocument, Equatable {
 
     var maybeTypeSection: TypeSection?
     var maybeFuncSection: FuncSection?
+    var maybeFunctionBodies: [FunctionBody]?
 
     var sectionIndex = 0
     while !moduleReader.isEOF {
@@ -77,6 +78,8 @@ struct WasmDocument: FileDocument, Equatable {
       case .function(let reader):
         maybeFuncSection = try FuncSection(typeIndices: reader.collect().map(\.value))
 
+      case .code(let reader):
+        maybeFunctionBodies = try reader.collect()
       default:
         continue
       }
@@ -86,8 +89,22 @@ struct WasmDocument: FileDocument, Equatable {
     else { throw Error.requiredSectionAbsent(.type) }
     guard let funcSection = maybeFuncSection
     else { throw Error.requiredSectionAbsent(.function) }
+    guard let functionBodies = maybeFunctionBodies
+    else { throw Error.requiredSectionAbsent(.code) }
+
     self.typeSection = typeSection
     self.funcSection = funcSection
+    if let nameSection = nameSection {
+      self.codeSection = CodeSection(
+        functions: functionBodies.enumerated().compactMap {
+          guard let name = nameSection.functionNames[$0] else { return nil }
+
+          return CodeSection.Item(id: $0, name: name, body: $1)
+        }
+      )
+    } else {
+      codeSection = CodeSection(functions: [])
+    }
   }
 
   enum Error: Swift.Error {
@@ -101,6 +118,8 @@ struct WasmDocument: FileDocument, Equatable {
   let sections: [SectionInfo]
   let typeSection: TypeSection
   let funcSection: FuncSection
+  let codeSection: CodeSection
+
   private(set) var nameSection: NameSection?
 
   static let readableContentTypes = [UTType.wasm]

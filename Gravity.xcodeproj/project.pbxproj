@@ -20,6 +20,8 @@
 		D1C5A9D02588D7D400F74991 /* RawSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */; };
 		D1C5A9D72588DA0300F74991 /* TypeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */; };
 		D1C5A9DC2588E9D000F74991 /* NameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9DA2588E9D000F74991 /* NameSection.swift */; };
+		D1FDC43328A3F8A100F6B08B /* CodeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FDC43228A3F8A100F6B08B /* CodeSectionView.swift */; };
+		D1FDC43928A4191000F6B08B /* CodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FDC43828A4191000F6B08B /* CodeSection.swift */; };
 		D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
 		D1FF98A6257D7119004ECE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FF9890257D7119004ECE90 /* Assets.xcassets */; };
@@ -39,10 +41,11 @@
 		D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawSectionView.swift; sourceTree = "<group>"; };
 		D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSectionView.swift; sourceTree = "<group>"; };
 		D1C5A9DA2588E9D000F74991 /* NameSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSection.swift; sourceTree = "<group>"; };
+		D1FDC43228A3F8A100F6B08B /* CodeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSectionView.swift; sourceTree = "<group>"; };
+		D1FDC43828A4191000F6B08B /* CodeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSection.swift; sourceTree = "<group>"; };
 		D1FF988E257D7116004ECE90 /* GravityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityApp.swift; sourceTree = "<group>"; };
 		D1FF988F257D7116004ECE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1FF9890257D7119004ECE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D1FF9898257D7119004ECE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1FF989D257D7119004ECE90 /* Gravity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gravity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FF989F257D7119004ECE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1FF98A0257D7119004ECE90 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 				D19277932587C90A0071A096 /* WasmDocument.swift */,
 				D1B532C4258A265400543607 /* FuncSection.swift */,
 				D119897128A15CF000F83E46 /* TypeSection.swift */,
+				D1FDC43828A4191000F6B08B /* CodeSection.swift */,
 			);
 			path = Wasm;
 			sourceTree = "<group>";
@@ -80,6 +84,7 @@
 				D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */,
 				D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */,
 				D1B532C9258A347400543607 /* FuncSectionView.swift */,
+				D1FDC43228A3F8A100F6B08B /* CodeSectionView.swift */,
 			);
 			path = SectionDetails;
 			sourceTree = "<group>";
@@ -88,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				D1FF988D257D7116004ECE90 /* Shared */,
-				D1FF9897257D7119004ECE90 /* iOS */,
 				D1FF989E257D7119004ECE90 /* macOS */,
 				D1FF9896257D7119004ECE90 /* Products */,
 			);
@@ -117,14 +121,6 @@
 				D1FF989D257D7119004ECE90 /* Gravity.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D1FF9897257D7119004ECE90 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D1FF9898257D7119004ECE90 /* Info.plist */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		D1FF989E257D7119004ECE90 /* macOS */ = {
@@ -212,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1FDC43328A3F8A100F6B08B /* CodeSectionView.swift in Sources */,
 				D1B532CB258A347400543607 /* FuncSectionView.swift in Sources */,
 				D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */,
 				D1B532C6258A265400543607 /* FuncSection.swift in Sources */,
@@ -220,6 +217,7 @@
 				D19277952587C90A0071A096 /* WasmDocument.swift in Sources */,
 				D1BEDBCD258927FC00DEEF96 /* NameSectionView.swift in Sources */,
 				D119897328A15CF000F83E46 /* TypeSection.swift in Sources */,
+				D1FDC43928A4191000F6B08B /* CodeSection.swift in Sources */,
 				D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */,
 				D1C5A9D02588D7D400F74991 /* RawSectionView.swift in Sources */,
 				D192779C2587EF340071A096 /* SectionDetails.swift in Sources */,
@@ -360,7 +358,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Gravity;
 				PRODUCT_NAME = Gravity;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -386,7 +384,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Gravity;
 				PRODUCT_NAME = Gravity;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -432,7 +430,7 @@
 			repositoryURL = "https://github.com/swiftwasm/WasmTransformer.git";
 			requirement = {
 				kind = revision;
-				revision = 5679ba034e292d6326cfe38a4cb322bba9a9a338;
+				revision = 48f462681de25089a869a1913da50ad3e55ac83a;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

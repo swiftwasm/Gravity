@@ -7,6 +7,6 @@
 
 import WasmTransformer
 
-struct TypeSection {
+struct TypeSection: Equatable {
   let signatures: [FuncSignature]
 }

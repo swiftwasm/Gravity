@@ -20,6 +20,40 @@ extension ArraySlice where Element == UInt8 {
   }
 }
 
+extension SectionInfo {
+  public func description(customSectionName: String?) -> String {
+    switch type {
+    case .custom:
+      if let name = customSectionName {
+        return "Custom section named: `\(name)`"
+      } else {
+        return "Unnamed custom section"
+      }
+
+    case .type:
+      return "Types section"
+
+    case .function:
+      return "Functions to types mapping section"
+
+    case .code:
+      return "Code section"
+
+    case .global:
+      return "Globals section"
+
+    case .import:
+      return "Imports section"
+
+    case .export:
+      return "Exports section"
+
+    default:
+      return "Unknown section"
+    }
+  }
+}
+
 struct SectionDetails: View {
   let file: WasmDocument
   let sectionID: Int
@@ -32,13 +66,11 @@ struct SectionDetails: View {
 
   var body: some View {
     let section = file.sections[sectionID]
-    let name = customSectionName(section)
     VStack {
-      if section.type == .custom, let name = name {
-        Text("Custom section name: \(name)")
-          .font(.headline)
-          .padding()
-      }
+      let name = customSectionName(section)
+      Text(try! AttributedString(markdown: section.description(customSectionName: name)))
+        .font(.headline)
+        .padding()
 
       switch section.type {
       case .type:
@@ -51,16 +83,22 @@ struct SectionDetails: View {
             nameSection: nameSection
           )
         } else {
-          RawSectionView(input: file.input, section: section)
+          RawSectionView(bytes: file.input.bytes[section.startOffset..<section.endOffset])
         }
       case .custom where name == "name":
         if let nameSection = file.nameSection {
           NameSectionView(section: nameSection)
         } else {
-          RawSectionView(input: file.input, section: section)
+          RawSectionView(bytes: file.input.bytes[section.startOffset..<section.endOffset])
+        }
+      case .code:
+        if file.nameSection != nil {
+          CodeSectionView(codeSection: file.codeSection)
+        } else {
+          RawSectionView(bytes: file.input.bytes[section.startOffset..<section.endOffset])
         }
       default:
-        RawSectionView(input: file.input, section: section)
+        RawSectionView(bytes: file.input.bytes[section.startOffset..<section.endOffset])
       }
     }
   }
