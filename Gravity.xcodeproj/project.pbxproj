@@ -7,36 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D119897228A15CF000F83E46 /* TypeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D119897128A15CF000F83E46 /* TypeSection.swift */; };
 		D119897328A15CF000F83E46 /* TypeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D119897128A15CF000F83E46 /* TypeSection.swift */; };
 		D12CBCD02586BA0D00AB2B1B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D12CBCCF2586BA0D00AB2B1B /* ComposableArchitecture */; };
-		D12CBCD42586BADA00AB2B1B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CBCD32586BADA00AB2B1B /* State.swift */; };
 		D12CBCD52586BADA00AB2B1B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CBCD32586BADA00AB2B1B /* State.swift */; };
-		D192777C258795410071A096 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192777B258795410071A096 /* Environment.swift */; };
 		D192777D258795410071A096 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192777B258795410071A096 /* Environment.swift */; };
-		D192778F2587AEF70071A096 /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192778E2587AEF70071A096 /* SectionItem.swift */; };
 		D19277902587AEF70071A096 /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192778E2587AEF70071A096 /* SectionItem.swift */; };
-		D19277942587C90A0071A096 /* WasmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277932587C90A0071A096 /* WasmDocument.swift */; };
 		D19277952587C90A0071A096 /* WasmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19277932587C90A0071A096 /* WasmDocument.swift */; };
-		D192779B2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
 		D192779C2587EF340071A096 /* SectionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192779A2587EF340071A096 /* SectionDetails.swift */; };
-		D1B532C5258A265400543607 /* FuncSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C4258A265400543607 /* FuncSection.swift */; };
 		D1B532C6258A265400543607 /* FuncSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C4258A265400543607 /* FuncSection.swift */; };
-		D1B532CA258A347400543607 /* FuncSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C9258A347400543607 /* FuncSectionView.swift */; };
 		D1B532CB258A347400543607 /* FuncSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B532C9258A347400543607 /* FuncSectionView.swift */; };
-		D1BEDBCC258927FC00DEEF96 /* NameSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */; };
 		D1BEDBCD258927FC00DEEF96 /* NameSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BEDBCB258927FC00DEEF96 /* NameSectionView.swift */; };
-		D1C5A9CF2588D7D400F74991 /* RawSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */; };
 		D1C5A9D02588D7D400F74991 /* RawSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9CE2588D7D400F74991 /* RawSectionView.swift */; };
-		D1C5A9D62588DA0300F74991 /* TypeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */; };
 		D1C5A9D72588DA0300F74991 /* TypeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9D52588DA0300F74991 /* TypeSectionView.swift */; };
-		D1C5A9DB2588E9D000F74991 /* NameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9DA2588E9D000F74991 /* NameSection.swift */; };
 		D1C5A9DC2588E9D000F74991 /* NameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5A9DA2588E9D000F74991 /* NameSection.swift */; };
-		D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
 		D1FF98A2257D7119004ECE90 /* GravityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988E257D7116004ECE90 /* GravityApp.swift */; };
-		D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
 		D1FF98A4257D7119004ECE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF988F257D7116004ECE90 /* ContentView.swift */; };
-		D1FF98A5257D7119004ECE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FF9890257D7119004ECE90 /* Assets.xcassets */; };
 		D1FF98A6257D7119004ECE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FF9890257D7119004ECE90 /* Assets.xcassets */; };
 		D1FF98B3257D725D004ECE90 /* WasmTransformer in Frameworks */ = {isa = PBXBuildFile; productRef = D1FF98B2257D725D004ECE90 /* WasmTransformer */; };
 /* End PBXBuildFile section */
@@ -57,7 +42,6 @@
 		D1FF988E257D7116004ECE90 /* GravityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityApp.swift; sourceTree = "<group>"; };
 		D1FF988F257D7116004ECE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1FF9890257D7119004ECE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D1FF9895257D7119004ECE90 /* Gravity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gravity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FF9898257D7119004ECE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1FF989D257D7119004ECE90 /* Gravity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gravity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FF989F257D7119004ECE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,13 +49,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D1FF9892257D7119004ECE90 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D1FF989A257D7119004ECE90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +114,6 @@
 		D1FF9896257D7119004ECE90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D1FF9895257D7119004ECE90 /* Gravity.app */,
 				D1FF989D257D7119004ECE90 /* Gravity.app */,
 			);
 			name = Products;
@@ -163,23 +139,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D1FF9894257D7119004ECE90 /* Gravity (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D1FF98A9257D7119004ECE90 /* Build configuration list for PBXNativeTarget "Gravity (iOS)" */;
-			buildPhases = (
-				D1FF9891257D7119004ECE90 /* Sources */,
-				D1FF9892257D7119004ECE90 /* Frameworks */,
-				D1FF9893257D7119004ECE90 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Gravity (iOS)";
-			productName = "Gravity (iOS)";
-			productReference = D1FF9895257D7119004ECE90 /* Gravity.app */;
-			productType = "com.apple.product-type.application";
-		};
 		D1FF989C257D7119004ECE90 /* Gravity (macOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1FF98AC257D7119004ECE90 /* Build configuration list for PBXNativeTarget "Gravity (macOS)" */;
@@ -210,9 +169,6 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
-					D1FF9894257D7119004ECE90 = {
-						CreatedOnToolsVersion = 12.2;
-					};
 					D1FF989C257D7119004ECE90 = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -235,21 +191,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D1FF9894257D7119004ECE90 /* Gravity (iOS) */,
 				D1FF989C257D7119004ECE90 /* Gravity (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D1FF9893257D7119004ECE90 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D1FF98A5257D7119004ECE90 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D1FF989B257D7119004ECE90 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,27 +208,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D1FF9891257D7119004ECE90 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D1B532CA258A347400543607 /* FuncSectionView.swift in Sources */,
-				D1FF98A3257D7119004ECE90 /* ContentView.swift in Sources */,
-				D1B532C5258A265400543607 /* FuncSection.swift in Sources */,
-				D192777C258795410071A096 /* Environment.swift in Sources */,
-				D1C5A9D62588DA0300F74991 /* TypeSectionView.swift in Sources */,
-				D19277942587C90A0071A096 /* WasmDocument.swift in Sources */,
-				D1BEDBCC258927FC00DEEF96 /* NameSectionView.swift in Sources */,
-				D119897228A15CF000F83E46 /* TypeSection.swift in Sources */,
-				D1FF98A1257D7119004ECE90 /* GravityApp.swift in Sources */,
-				D1C5A9CF2588D7D400F74991 /* RawSectionView.swift in Sources */,
-				D192779B2587EF340071A096 /* SectionDetails.swift in Sources */,
-				D192778F2587AEF70071A096 /* SectionItem.swift in Sources */,
-				D1C5A9DB2588E9D000F74991 /* NameSection.swift in Sources */,
-				D12CBCD42586BADA00AB2B1B /* State.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D1FF9899257D7119004ECE90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,51 +343,6 @@
 			};
 			name = Release;
 		};
-		D1FF98AA257D7119004ECE90 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Gravity;
-				PRODUCT_NAME = Gravity;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		D1FF98AB257D7119004ECE90 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Gravity;
-				PRODUCT_NAME = Gravity;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		D1FF98AD257D7119004ECE90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -469,9 +350,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -482,6 +363,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Gravity;
 				PRODUCT_NAME = Gravity;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -494,9 +376,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H4Z9Z4RD2G;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -507,6 +389,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsignal.Gravity;
 				PRODUCT_NAME = Gravity;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -520,15 +403,6 @@
 			buildConfigurations = (
 				D1FF98A7257D7119004ECE90 /* Debug */,
 				D1FF98A8257D7119004ECE90 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D1FF98A9257D7119004ECE90 /* Build configuration list for PBXNativeTarget "Gravity (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D1FF98AA257D7119004ECE90 /* Debug */,
-				D1FF98AB257D7119004ECE90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
