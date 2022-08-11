@@ -429,8 +429,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swiftwasm/WasmTransformer.git";
 			requirement = {
-				kind = revision;
-				revision = 48f462681de25089a869a1913da50ad3e55ac83a;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

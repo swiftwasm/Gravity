@@ -48,6 +48,9 @@ extension SectionInfo {
     case .export:
       return "Exports section"
 
+    case .data:
+      return "Data segments section"
+
     default:
       return "Unknown section"
     }

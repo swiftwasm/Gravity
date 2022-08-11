@@ -59,7 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftwasm/WasmTransformer.git",
       "state" : {
-        "revision" : "48f462681de25089a869a1913da50ad3e55ac83a"
+        "revision" : "b65e7c5f062b8959ce159aa4e1c4bb8d7938e941",
+        "version" : "0.4.0"
       }
     },
     {
